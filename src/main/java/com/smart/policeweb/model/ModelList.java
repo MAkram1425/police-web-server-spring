@@ -3,8 +3,8 @@ package com.smart.policeweb.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "make_model_list")
-public class MakeModelList {
+@Table(name = "model_list")
+public class ModelList {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -14,16 +14,7 @@ public class MakeModelList {
     private String make;
     private String model;
 
-    public MakeModelList() {
-    }
-
-    public MakeModelList(Long id, String carSNo, String licencePlate, String reason, String make, String model) {
-        this.id = id;
-        this.carSNo = carSNo;
-        this.licencePlate = licencePlate;
-        this.reason = reason;
-        this.make = make;
-        this.model = model;
+    public ModelList() {
     }
 
     public Long getId() {
@@ -76,7 +67,7 @@ public class MakeModelList {
 
     @Override
     public String toString() {
-        return "MakeModelList{" +
+        return "ModelList{" +
                 "id=" + id +
                 ", carSNo='" + carSNo + '\'' +
                 ", licencePlate='" + licencePlate + '\'' +

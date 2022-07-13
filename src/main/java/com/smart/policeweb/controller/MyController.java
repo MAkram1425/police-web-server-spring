@@ -1,5 +1,6 @@
 package com.smart.policeweb.controller;
 
+import com.smart.policeweb.repository.InterestListRepository;
 import com.smart.policeweb.repository.MakeModelListRepository;
 import com.smart.policeweb.repository.ReasonListRepository;
 import com.smart.policeweb.repository.VIOListRepository;
@@ -12,13 +13,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MyController {
 
     @Autowired
-    private MakeModelListRepository makeModelListRepository;
-
-    @Autowired
     private ReasonListRepository reasonListRepository;
 
     @Autowired
     private VIOListRepository vioListRepository;
+
+    @Autowired
+    private MakeModelListRepository makeModelListRepository;
+
+    @Autowired
+    private InterestListRepository interestListRepository;
 
 
     @GetMapping
@@ -32,9 +36,15 @@ public class MyController {
         return "ReasonList";
     }
 
+    @GetMapping("/model-list")
+    public String modelList(Model model){
+        model.addAttribute("modelList",makeModelListRepository.findAll());
+        return "ModelList";
+    }
+
     @GetMapping("/interest-list")
     public String interestList(Model model){
-        model.addAttribute("reasonInterestList",reasonListRepository.findAll());
+        model.addAttribute("interestList",interestListRepository.findAll());
         return "InterestList";
     }
 
