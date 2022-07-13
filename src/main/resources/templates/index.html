@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+          integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+          integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+          integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+          crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <title>Maryland State Police Vehicle of Interest </title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/}">
+      <img src="./assets/logo.png"
+           width="60" height="60" alt="logo"/>
+      <strong class="text-dark">Maryland State Police VOI</strong></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-0  border-primary" type="search" placeholder="Search Item"
+               aria-label="Search">
+        <button style="margin-left: -10px" class="btn bg-primary text-white" type="submit">
+                   <span class="row">
+                       <span class="col-6">
+                            <span for="search" class="text-white text-bold">Search</span>
+                       </span>
+                       <span class="col-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                <path fill="#231f20"
+                                      d="M7.763 2A6.77 6.77 0 0 0 1 8.763c0 1.807.703 3.505 1.98 4.782a6.718 6.718 0 0 0 4.783 1.981 6.77 6.77 0 0 0 6.763-6.763A6.77 6.77 0 0 0 7.763 2ZM3.675 13.501a5.094 5.094 0 0 1 3.958-1.989c.024.001.047.007.071.007h.023c.022 0 .042-.006.064-.007a5.087 5.087 0 0 1 3.992 2.046 6.226 6.226 0 0 1-4.02 1.468 6.212 6.212 0 0 1-4.088-1.525zm4.032-2.494c-.025 0-.049.004-.074.005a2.243 2.243 0 0 1-2.167-2.255 2.246 2.246 0 0 1 2.262-2.238 2.246 2.246 0 0 1 2.238 2.262c0 1.212-.97 2.197-2.174 2.232-.028-.001-.056-.006-.085-.006Zm4.447 2.215a5.594 5.594 0 0 0-3.116-2.052 2.749 2.749 0 0 0 1.428-2.412A2.747 2.747 0 0 0 7.704 6.02a2.747 2.747 0 0 0-2.738 2.762 2.73 2.73 0 0 0 1.422 2.386 5.602 5.602 0 0 0-3.081 1.995 6.22 6.22 0 0 1-1.806-4.398 6.27 6.27 0 0 1 6.263-6.263 6.27 6.27 0 0 1 6.263 6.263 6.247 6.247 0 0 1-1.873 4.457z"/>
+                            </svg>
+                       </span>
+                   </span>
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+<!--Navbar-->
+<nav style="background-color: darkred" class="navbar navbar-expand-lg text-white ">
+  <a class="navbar-brand text-white" th:href="@{/}">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="btn-group ">
+    <button style="background-color: darkred; border: none" type="button" class="btn btn-danger dropdown-toggle"
+            data-bs-toggle="dropdown" aria-expanded="false">
+      Reason Interest Maintaince
+    </button>
+    <ul style="background-color: darkred" class="dropdown-menu">
+      <li style="background-color: darkred"><a class="dropdown-item" th:href="@{/reason-list}">Display Reason List</a>
+      </li>
+    </ul>
+  </div>
+  <div class="btn-group">
+    <button style="background-color: darkred ; border: none" type="button" class="btn btn-danger dropdown-toggle"
+            data-bs-toggle="dropdown" aria-expanded="false">
+      Make/Model <br> Maintainance
+    </button>
+    <ul style="background-color: darkred" class="dropdown-menu">
+      <li style="background-color: darkred"><a class="dropdown-item" th:href="@{/interest-list}">Display Interest List</a>
+      </li>
+    </ul>
+  </div>
+  <div class="btn-group">
+    <button style="background-color: darkred ; border: none" type="button" class="btn btn-danger dropdown-toggle"
+            data-bs-toggle="dropdown" aria-expanded="false">
+      VOI Maintainance
+    </button>
+    <ul style="background-color: darkred" class="dropdown-menu">
+      <li style="background-color: darkred"><a class="dropdown-item" th:href="@{/vio-list}">Display VIO List</a></li>
+    </ul>
+  </div>
+
+</nav>
+<!--Body Section-->
+
+<section>
+  <div class="trapezoid ">
+    <img src="./assets/MAIN%20PIC%20MARYLAND.jpg" width="100%"
+         alt=""/>
+
+  </div>
+</section>
+<div style="background-color: black; padding: 20px">
+  <div class="row">
+    <div class="col-6 ">
+      <div class="row p-0 my-3">
+        <div class="col-3 p-0">
+          <button style="background-color: darkred; border: none" type="button" class="btn btn-danger w-100">News
+          </button>
+        </div>
+        <div class="col-3 p-0">
+          <button style="background-color: darkred; border: none" type="button" class="btn btn-danger w-100">Feed
+          </button>
+        </div>
+        <div class="col-3 p-0">
+          <button style="background-color: darkred; border: none" type="button" class="btn btn-danger w-100">About
+          </button>
+        </div>
+        <div class="col-3 p-0">
+          <button style="background-color: darkred; border: none" type="button" class="btn btn-danger w-100">Contact
+            Us
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 ">
+      <div class="row mx-4 text-danger">
+        <div class="col-2  rounded-circle text-center me-3 " >
+          <i class="bi bi-envelope-fill  rounded-circle py-2 px-3" style="font-size: 40px ;border: 2px solid darkred "  ></i>
+        </div>
+        <div class="col-2  rounded-circle text-center me-3 " >
+          <i class="bi bi-twitter   rounded-circle py-2 px-3" style="font-size: 40px ;border: 2px solid darkred "></i>
+        </div>
+        <div class="col-2  rounded-circle text-center me-3 " >
+          <i class="bi bi-facebook    rounded-circle py-2 px-3" style="font-size: 40px ;border: 2px solid darkred " ></i>
+        </div>
+        <div class="col-2  rounded-circle text-center me-3 " >
+          <i class="bi bi-google   rounded-circle py-2 px-3" style="font-size: 40px ;border: 2px solid darkred "></i>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+</html>
