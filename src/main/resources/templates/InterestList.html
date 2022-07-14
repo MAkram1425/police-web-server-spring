@@ -131,39 +131,41 @@
             <th scope="col">Model</th>
             <th scope="col">Year Of Manufacturing</th>
             <th scope="col">Color</th>
-            <th scope="col">Owner Name</th>
-            <th scope="col">Owner Phone#</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="interest: ${interestList}">
-            <td>Mark</td>
-            <td>Mark</td>
-            <td>Mark</td>
-            <td>Mark</td>
-            <td>Mark</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td th:text="${interest.carSNo}"></td>
+            <td th:text="${interest.licencePlate}"></td>
+            <td th:text="${interest.reason}"></td>
+            <td th:text="${interest.make}"></td>
+            <td th:text="${interest.model}"></td>
+            <td th:text="${interest.yearOfManufacturer}"></td>
+            <td th:text="${interest.color}"></td>
         </tr>
+        </tbody>
+    </table>
 </section>
 <div style="background-color: black; padding: 20px">
+    <span class="text-white">
+        Maryland State Police VOI  @copy rights reserved 2017-2022
+    </span>
     <div class="row">
         <div class="col-6 ">
             <div class="row p-0 my-3">
-                <div class="col-3 p-0">
+                <div class="col-2 p-0 me-1">
                     <button style="background-color: darkred; border: none" type="button" class="btn btn-danger w-100">News
                     </button>
                 </div>
-                <div class="col-3 p-0">
+                <div class="col-2 p-0 me-1">
                     <button style="background-color: darkred; border: none" type="button" class="btn btn-danger w-100">Feed
                     </button>
                 </div>
-                <div class="col-3 p-0">
+                <div class="col-2 p-0 me-2">
                     <button style="background-color: darkred; border: none" type="button" class="btn btn-danger w-100">About
                     </button>
                 </div>
-                <div class="col-3 p-0">
+                <div class="col-2 p-0 me-2">
                     <button style="background-color: darkred; border: none" type="button" class="btn btn-danger w-100">Contact
                         Us
                     </button>
