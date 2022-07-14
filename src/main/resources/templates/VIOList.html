@@ -136,15 +136,15 @@
         </thead>
         <tbody>
         <tr th:each="voi: ${vioList}">
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Mark</td>
-            <td>Mark</td>
-            <td>Mark</td>
-            <td>Mark</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td th:text="${voi.id}"></td>
+            <td th:text="${voi.licencePlate}"></td>
+            <td th:text="${voi.reason}"></td>
+            <td th:text="${voi.make}"></td>
+            <td th:text="${voi.model}"></td>
+            <td th:text="${voi.yearOfManufacture}"></td>
+            <td th:text="${voi.color}"></td>
+            <td th:text="${voi.ownerName}"></td>
+            <td th:text="${voi.ownerPhone}"></td>
         </tr>
         </tbody>
     </table>
