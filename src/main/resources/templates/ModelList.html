@@ -80,6 +80,7 @@
     </div>
 </nav>
 <!--Navbar-->
+<!--Navbar-->
 <nav style="background-color: darkred" class="navbar navbar-expand-lg text-white ">
     <a class="navbar-brand text-white" th:href="@{/}">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -93,7 +94,6 @@
         </button>
         <ul style="background-color: darkred" class="dropdown-menu">
             <li style="background-color: darkred"><a class="dropdown-item" th:href="@{/reason-list}">Display Reason List</a></li>
-            <li style="background-color: darkred"><a class="dropdown-item" th:href="@{/model-list}">Make Model List</a></li>
         </ul>
     </div>
     <div class="btn-group">
@@ -102,8 +102,7 @@
             Make/Model <br> Maintainance
         </button>
         <ul style="background-color: darkred" class="dropdown-menu">
-            <li style="background-color: darkred"><a class="dropdown-item" th:href="@{/interest-list}">Display Interest List</a>
-            </li>
+            <li style="background-color: darkred"><a class="dropdown-item" th:href="@{/model-list}">Display Make Model List</a></li>
         </ul>
     </div>
     <div class="btn-group">
@@ -115,7 +114,6 @@
             <li style="background-color: darkred"><a class="dropdown-item" th:href="@{/vio-list}">Display VIO List</a></li>
         </ul>
     </div>
-
 </nav>
 <!--Body Section-->
 
@@ -133,7 +131,7 @@
         </thead>
         <tbody>
         <tr th:each="model: ${modelList}">
-            <td th:text="${model.carSNo}">Mark</td>
+            <td th:text="${model.id}">Mark</td>
             <td th:text="${model.licencePlate}">Mark</td>
             <td th:text="${model.reason}">Mark</td>
             <td th:text="${model.make}">Mark</td>
