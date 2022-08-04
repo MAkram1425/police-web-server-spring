@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "reason_interest_list")
-public class ReasonInterestList {
+public class    ReasonInterestList {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
